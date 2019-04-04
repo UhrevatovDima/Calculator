@@ -1,30 +1,30 @@
-package com.company;
-
 import java.util.Scanner;
 
-public class Main {
+public class Calculator {
 
     public static void main(String[] args) {
-        Main.calculatorInteger();
+        System.out.println("Hello, i'm Integer Calculator");
+        Calculator.calculatorInteger();
     }
 
     public static void calculatorInteger(){
-        System.out.println("Hello, i'm Integer Calculator");
         System.out.println("Choose your operation: +, -, *, /");
+        System.out.println("For exit - input any different char");
         Scanner in = new Scanner(System.in);
         String input = in.next();
         if(input.equals("+")){
-            System.out.println("Result " + Main.plus());
+            System.out.println("Result " + Calculator.plus());
         }
         if(input.equals("-")){
-            System.out.println("Result " + Main.minus());
+            System.out.println("Result " + Calculator.minus());
         }
         if(input.equals("*")){
-            System.out.println("Result " + Main.multiply());
+            System.out.println("Result " + Calculator.multiply());
         }
         if(input.equals("/")){
-            System.out.println("Result " + Main.divide());
+            System.out.println("Result " + Calculator.divide());
         }
+        calculatorInteger();
     }
 
     public static int[] input(){
@@ -39,32 +39,25 @@ public class Main {
 
     public static int plus(){
         System.out.println("Operation + ");
-        int[] masPlus;
-        masPlus = input();
-        return masPlus[0] + masPlus[1];
+        int[] inputs = input();
+        return inputs[0] + inputs[1];
     }
 
     public static int minus(){
-        Scanner in = new Scanner(System.in);
         System.out.println("Operation - ");
-        int[] masMinus;
-        masMinus = input();
-        return masMinus[0] - masMinus[1];
+        int[] inputs = input();
+        return inputs[0] - inputs[1];
     }
 
     public static int multiply(){
-        Scanner in = new Scanner(System.in);
         System.out.println("Operation * ");
-        int[] masMultiply;
-        masMultiply = input();
-        return masMultiply[0] * masMultiply[1];
+        int[] inputs = input();
+        return inputs[0] * inputs[1];
     }
 
     public static int divide(){
-        Scanner in = new Scanner(System.in);
         System.out.println("Operation / ");
-        int[] masDivide;
-        masDivide = input();
-        return masDivide[0] / masDivide[1];
+        int[] inputs = input();
+        return inputs[0] / inputs[1];
     }
 }
