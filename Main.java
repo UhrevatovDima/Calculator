@@ -1,30 +1,35 @@
+package com.company;
+
 import java.util.Scanner;
 
-public class Calculator {
+public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hello, i'm Integer Calculator");
-        Calculator.calculatorInteger();
+        System.out.println("Hello, i'm Integer Main");
+        Main.calculatorInteger();
     }
 
     public static void calculatorInteger(){
-        System.out.println("Choose your operation: +, -, *, /");
-        System.out.println("For exit - input any different char");
-        Scanner in = new Scanner(System.in);
-        String input = in.next();
-        if(input.equals("+")){
-            System.out.println("Result " + Calculator.plus());
+        int triggerRepeat = 0;
+        while(triggerRepeat == 0){
+            System.out.println("Choose your operation: +, -, *, /");
+            System.out.println("For exit - input any different char");
+            Scanner in = new Scanner(System.in);
+            String input = in.next();
+            if(input.equals("+")){
+                System.out.println("Result " + Main.plus());
+            }
+            if(input.equals("-")){
+                System.out.println("Result " + Main.minus());
+            }
+            if(input.equals("*")){
+                System.out.println("Result " + Main.multiply());
+            }
+            if(input.equals("/")){
+                System.out.println("Result " + Main.divide());
+            }
+            else triggerRepeat = +1;
         }
-        if(input.equals("-")){
-            System.out.println("Result " + Calculator.minus());
-        }
-        if(input.equals("*")){
-            System.out.println("Result " + Calculator.multiply());
-        }
-        if(input.equals("/")){
-            System.out.println("Result " + Calculator.divide());
-        }
-        calculatorInteger();
     }
 
     public static int[] input(){
