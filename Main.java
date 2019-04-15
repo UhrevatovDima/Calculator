@@ -1,38 +1,37 @@
-package com.company;
-
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
         System.out.println("Hello, i'm Integer Main");
-        Main.calculatorInteger();
+        Main main = new Main();
+        main.calculatorInteger();
     }
 
-    public static void calculatorInteger(){
+    Scanner in = new Scanner(System.in);
+
+    public void calculatorInteger(){
         int triggerRepeat = 0;
         while(triggerRepeat == 0){
             System.out.println("Choose your operation: +, -, *, /");
             System.out.println("For exit - input any different char");
-            Scanner in = new Scanner(System.in);
             String input = in.next();
-            if(input.equals("+")){
-                System.out.println("Result " + Main.plus());
+
+            switch(input){
+                case "+" : System.out.println("Result " + plus());
+                    break;
+                case "-" : System.out.println("Result " + minus());
+                    break;
+                case "*" : System.out.println("Result " + multiply());
+                    break;
+                case "/" : System.out.println("Result " + divide());
+                    break;
+                default: triggerRepeat = 1;
             }
-            if(input.equals("-")){
-                System.out.println("Result " + Main.minus());
-            }
-            if(input.equals("*")){
-                System.out.println("Result " + Main.multiply());
-            }
-            if(input.equals("/")){
-                System.out.println("Result " + Main.divide());
-            }
-            else triggerRepeat = +1;
         }
     }
 
-    public static int[] input(){
+    public int[] input(){
         Scanner in = new Scanner(System.in);
         int[] mas = new int[2];
         System.out.println("Input first number");
@@ -42,25 +41,25 @@ public class Main {
         return mas;
     }
 
-    public static int plus(){
+    public int plus(){
         System.out.println("Operation + ");
         int[] inputs = input();
         return inputs[0] + inputs[1];
     }
 
-    public static int minus(){
+    public int minus(){
         System.out.println("Operation - ");
         int[] inputs = input();
         return inputs[0] - inputs[1];
     }
 
-    public static int multiply(){
+    public int multiply(){
         System.out.println("Operation * ");
         int[] inputs = input();
         return inputs[0] * inputs[1];
     }
 
-    public static int divide(){
+    public int divide(){
         System.out.println("Operation / ");
         int[] inputs = input();
         return inputs[0] / inputs[1];
