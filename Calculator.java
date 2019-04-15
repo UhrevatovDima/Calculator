@@ -1,11 +1,11 @@
 import java.util.Scanner;
 
-public class Main {
+public class Calculator {
 
     public static void main(String[] args) {
-        System.out.println("Hello, i'm Integer Main");
-        Main main = new Main();
-        main.calculatorInteger();
+        System.out.println("Hello, i'm Integer Calculator");
+        Calculator calculator = new Calculator();
+        calculator.calculatorInteger();
     }
 
     Scanner in = new Scanner(System.in);
